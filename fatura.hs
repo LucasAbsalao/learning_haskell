@@ -30,5 +30,8 @@ nextMonth (a:as) i
 logMes :: String -> String -> Double
 logMes month [] = 0
 logMes month fat
-    | getMonth fat == month = (getValue fat 1) + (logMes month (nextMonth fat 1))
+    | getMonth fat == month = roundValue ((getValue fat 1) + (logMes month (nextMonth fat 1)))
     | otherwise =  logMes month (nextMonth fat 1)
+
+roundValue :: Double -> Double
+roundValue x = fromIntegral (round (x*100)) / 100
