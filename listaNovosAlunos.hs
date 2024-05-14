@@ -17,6 +17,8 @@ remove (a:as) b c
 
 bSort :: [String] -> [String]
 bSort [] = []
-bSort a = ordenar(remove a (maxString a) True) ++ [maxString a]
+bSort a = bSort(remove a (maxString a) True) ++ [maxString a]
 
 --bSort :: [String] -> [String]
+
+quickSort :: [String] -> [String]

@@ -1,3 +1,9 @@
+main = do
+      a <- getLine
+      let result = fatPrime (read a :: Int)
+      print result
+
+
 dividers :: Int -> Int -> Int
 dividers n i
     |n==0 = 1
