@@ -1,13 +1,13 @@
 data Ops = SUM | MUL | SUB
            deriving (Read)
 
-data IntTree = NilT Int |
+data IntTree = Nilt Int |
                Node Ops IntTree IntTree
                deriving (Read)
 
 
 evalTree :: IntTree -> Int
-evalTree (NilT a) = a
+evalTree (Nilt a) = a
 evalTree (Node SUM tree1 tree2) = evalTree tree1 + evalTree tree2
 evalTree (Node SUB tree1 tree2) = evalTree tree1 - evalTree tree2
 evalTree (Node MUL tree1 tree2) = evalTree tree1 * evalTree tree2
