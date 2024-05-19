@@ -17,13 +17,13 @@ reversei South = North
 reversei East = West
 reversei West = East
 
-faces :: Direction -> [Command] -> [Direction]
-faces d [] = [d]
-faces d (a:as)
-    | a==TurnLeft = [d]++faces (turn d) as
-    | a==TurnRight = [d]++faces (turn (reversei d)) as
-    | a==(Forward n) = [d]++faces d as
-    | a==(Backward n) = [d]++faces (reversei d) as
+faces :: Direction -> [Command] -> Direction
+faces d [] = d
+faces d (TurnLeft:as)= faces (turn d) as
+faces d (TurnRight:as) = faces (turn (reversei d)) as
+faces d ((Forward n):as) = faces d as
+faces d ((Backward n):as) = faces d as
+
 
 
 main = do
