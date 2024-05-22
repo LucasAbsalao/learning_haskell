@@ -7,7 +7,7 @@ animalList list1 [] = []
 animalList (a:as) (b:bs)
     | parentesco a b >= 0.1 && parentesco a b <= 0.3 = [Cisnal] ++ animalList as bs
     | parentesco a b >= 0.4 && parentesco a b <= 0.7 = [Iguanoide] ++ animalList as bs
-    | parentesco a b >= 0.1 && parentesco a b <= 0.3 = [Narvale] ++ animalList as bs
+    | parentesco a b >= 0.8 = [Narvale] ++ animalList as bs
     | otherwise = animalList as bs
         where parentesco a b = charEquals a b / fromIntegral (max (length a) (length b))  
 
@@ -38,5 +38,5 @@ main = do
 
 
 
---["UTHUNOHUNOHU", "HUNHOUHNOHUOHOUH", "NHUNHOUTECUTTUUNOHUH", "NHONUHHOUTHOHHUTOCUUTUNT", "TOHUHUNHHUOUH", "THUOTNUHHOHUHOHUHTH", "HOUHHOTUHOHTUHHOUH", "OTUHOHUHTOHTUHTHOUHN"] ["UTHONUHNOTOu", "HUTNOEHUNHHueuhnh", "othutnouhUTNEHUHNHO", "ohuhohuhtUHEOUHNTONHeott", "TUNHENTUHuehu", "uhohntuhHUHENUTNHNH", "THUTNEHHteuhehUTEH", "TNUHTNETHNHENHUHNUHEN"]
---["TEONTUthuo", "toutuhHEHUNHUH", "tocontahurc", "hotnuhonuhc", "egucroegur", "thTHUERCNTOHUTH", "cgurohtnhou43234", "houhoeu9903.ouhnhuhh"] ["nuhontuhgcr", "outhoenthuHUHNE", "ohuntoccr", "onhunRCGRG", "ecug324324", "oguroe123123hnhu", "oeuhntohenuhn3324"]
+--["UTHUNOHUNOHU", "HUNHOUHNOHUOHOUH", "NHUNHOUTECUTTUUNOHUH", "NHONUHHOUTHOHHUTOCUUTUNT", "TOHUHUNHHUOUH", "THUOTNUHHOHUHOHUHTH", "HOUHHOTUHOHTUHHOUH", "OTUHOHUHTOHTUHTHOUHN"]
+-- ["UTHONUHNOTOu", "HUTNOEHUNHHueuhnh", "othutnouhUTNEHUHNHO", "ohuhohuhtUHEOUHNTONHeott", "TUNHENTUHuehu", "uhohntuhHUHENUTNHNH", "THUTNEHHteuhehUTEH", "TNUHTNETHNHENHUHNUHEN"]
