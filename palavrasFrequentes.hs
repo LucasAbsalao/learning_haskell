@@ -29,19 +29,14 @@ contarPalavra (a:as) search
 --     | otherwise = a:removeDuo as search
 
 qsort :: [(String,Int)] -> [(String,Int)]
-qsort (x:xs) = menores ++ [x] ++ maiores
-    where
-        menores = [a | a <- xs, func x a]
-        maiores = [a | a <- xs, inv (func x a)]
+qsort [] = []
+qsort (x:xs) = qsort [a | a <- xs, func x a] ++ [x] ++ qsort [a | a <- xs, not (func x a)]
 
-inv :: Bool -> Bool
-inv True = False
-inv False = True
 
 func :: (String,Int) -> (String,Int) -> Bool
 func (a,b) (c,d)
-    | b > d = True
-    | b==d && length a < length c = True
+    | b < d = True
+    | (b==d) && (length a > length c) = True
     | otherwise = False
 
 -- taken :: [(String,Int)] -> Int -> [String]
