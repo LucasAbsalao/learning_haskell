@@ -9,7 +9,7 @@ intToChar 3 = 'C'
 intToChar 4 = 'S'
 
 divide8 :: String -> Int -> String -> [String]
-divide8 (a:[]) i eachone = [eachone++a]
+divide8 (a:[]) i eachone = [eachone++[a]]
 divide8 (a:as) i eachone
     | i==7 = [eachone++[a]] ++ divide8 as 0 ""
     | otherwise = divide8 as (i+1) (eachone++[a])
